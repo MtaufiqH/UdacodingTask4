@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Libvis App</string>
+    <string name="done">Done</string>
+    <string name="tujuan">Tujuan</string>
+    <string name="alamat">Alamat</string>
+    <string name="asal_sekolah">Asal Sekolah</string>
+    <string name="tgl_kunjungan">Tgl Kunjungan</string>
+    <string name="nomor_hp">Nomor Hp</string>
+    <string name="nama">Nama</string>
+    <string name="type_your_name_here">Type your name here</string>
 </resources>
