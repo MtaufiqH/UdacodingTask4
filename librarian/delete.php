@@ -22,7 +22,7 @@ if (!empty($_POST['id'])) {
 
 function set_response($isSuccess, $message){
 	$result = array(
-	'isSuccess' => $isSuccess,
+	'response' => $isSuccess,
 	 'message' => $message
 	);
 

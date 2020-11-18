@@ -7,10 +7,10 @@ if (!empty($_POST['nama']) && !empty($_POST['no_hp']) && !empty($_POST['tanggal_
 	$tanggal_kunjungan = $_POST['tanggal_kunjungan'];
 	$alamat = $_POST['alamat'];
 	$asal_sekolah = $_POST['asal_sekolah'];
-	$tujuan = $_POST['tujuan']
+	$tujuan = $_POST['tujuan'];
 
 	$query = "INSERT INTO visitor(nama,no_hp,tanggal_kunjungan,alamat, asal_sekolah, tujuan)
-			 VALUES ('$nama', '$noHp', '$tanggal_kunjungan', '$alamat', '$asal_sekolah', $tujuan)";
+			 VALUES ('$nama', '$noHp', '$tanggal_kunjungan', '$alamat', '$asal_sekolah', '$tujuan')";
 	$insert = mysqli_query($connect, $query);
 
 
