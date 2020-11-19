@@ -11,7 +11,7 @@ if (!empty($_POST['id']) && !empty($_POST['nama']) && !empty($_POST['no_hp']) &&
 	$asal_sekolah = $_POST['asal_sekolah'];
 	$tujuan = $_POST['tujuan'];
 
-	$query = "UPDATE visitor SET nama = '$nama' ,no_hp = '$noHp',tanggal_kunjungan= '$tanggal_kunjungan',alamat = '$alamat', asal_sekolah = '$asal_sekolah', tujuan = $tujuan WHERE id = '$_id'";
+	$query = "UPDATE visitor SET nama = '$nama' ,no_hp = '$noHp',tanggal_kunjungan= '$tanggal_kunjungan',alamat = '$alamat', asal_sekolah = '$asal_sekolah', tujuan = '$tujuan' WHERE id = '$_id'";
 
 
 	$update = mysqli_query($connect, $query);

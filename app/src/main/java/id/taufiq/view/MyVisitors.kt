@@ -65,7 +65,6 @@ class MyVisitors : AppCompatActivity(), VisitorView {
 
 
         when (doneButton.text) {
-
             "Update" -> {
                 doneButton.setOnClickListener {
 
@@ -85,22 +84,21 @@ class MyVisitors : AppCompatActivity(), VisitorView {
                             et_asal_sekolah.error = "cannot be empty!"
                             et_tujuan.error = "cannot be empty!"
                         } else {
-                            presenter.updateVisitor(
-                                data?.id!!,
-                                nama,
-                                noHp,
-                                tgl,
-                                alamat,
-                                asal,
-                                tujuan
-                            )
+                            if (data != null) {
+                                presenter.updateVisitor(data.id,nama,
+                                    noHp,
+                                    tgl,
+                                    alamat,
+                                    asal,
+                                    tujuan
+                                )
+                            }
                             finish()
                     }
                 }
 
 
-            }
-            else -> {
+            }else -> {
                 doneButton.setOnClickListener {
 
                     val nama = et_name.text.toString()
@@ -120,7 +118,7 @@ class MyVisitors : AppCompatActivity(), VisitorView {
                         et_tujuan.error = "cannot be empty!"
                     } else {
                         presenter.insertVisitor(nama, noHp, tgl, alamat, asal, tujuan)
-                        finishAffinity()
+                        finish()
                     }
                 }
             }

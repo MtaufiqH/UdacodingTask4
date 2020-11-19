@@ -47,8 +47,7 @@ class VisitorPresenter(val view: VisitorView) {
     ) {
 
         CoroutineScope(Dispatchers.Main).launch {
-            BuildApi.buildApiService()
-                .updateVisitor(id, nama, noHp, tglKunjungan, alamat, asal, tujuan)
+            BuildApi.buildApiService().updateVisitor(id, nama, noHp, tglKunjungan, alamat, asal, tujuan)
         }
 
     }
