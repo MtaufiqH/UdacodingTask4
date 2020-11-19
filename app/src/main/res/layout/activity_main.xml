@@ -20,29 +20,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/navigations" />
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/rv_visitor"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent" />-->
-
-    <!--        <ImageButton-->
-    <!--            android:id="@+id/btn_add_visitor"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_alignParentEnd="true"-->
-    <!--            android:padding="16dp"-->
-    <!--            android:background="@drawable/bg_btn"-->
-    <!--            android:layout_alignParentBottom="true"-->
-    <!--            android:layout_marginBottom="24dp"-->
-    <!--            android:layout_marginEnd="24dp"-->
-    <!--            android:src="@drawable/ic_baseline_add" />-->
-
-<!--    </RelativeLayout>-->
-
-<!--    <include layout="@layout/bottom_sheet" />-->
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
