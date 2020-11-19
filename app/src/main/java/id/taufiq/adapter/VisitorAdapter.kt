@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.taufiq.R
 import id.taufiq.api.response.Visitor
+import kotlinx.android.synthetic.main.visitor_row.view.*
 
 /**
  * Created By Taufiq on 11/19/2020.
@@ -25,7 +26,17 @@ class VisitorAdapter(
         fun binding(context: Context, data: Visitor, listener: (Visitor) -> Unit) {
             with(itemView) {
 
+                tv_nama_visitor.text = data.nama
+                tv_tgl_kunjungan.text = data.tanggalKunjungan
+                tv_asal_kampus.text = data.asalSekolah
+
+                setOnClickListener {
+                    listener(data)
+                }
+
+
             }
+
 
         }
     }

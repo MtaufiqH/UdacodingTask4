@@ -7,6 +7,6 @@ package id.taufiq.helper
 
 object MyUrl {
     // Todo: Dont forget to change localhost into your IP Address
-    const val BASE_URL = "http://localhost/librarian/"
+    const val BASE_URL = "http://192.168.1.74/librarian/"
 
 }
