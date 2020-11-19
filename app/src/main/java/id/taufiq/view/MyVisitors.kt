@@ -1,9 +1,11 @@
 package id.taufiq.view
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import id.taufiq.R
 import id.taufiq.api.response.Visitor
@@ -15,12 +17,13 @@ import kotlinx.android.synthetic.main.activity_my_visitors.*
 class MyVisitors : AppCompatActivity(), VisitorView {
 
     private val presenter = VisitorPresenter(this)
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_visitors)
 
-         val data = intent.getParcelableExtra<Visitor>("DATA_VISITOR")
+        val data = intent.getParcelableExtra<Visitor>("DATA_VISITOR")
 
         if (data != null) {
             et_name.setText(data.nama)
@@ -35,8 +38,24 @@ class MyVisitors : AppCompatActivity(), VisitorView {
             deleteButton.visibility = View.VISIBLE
 
             deleteButton.setOnClickListener {
-                presenter.deleteVisitor(data.id)
-                finish()
+                val alert = AlertDialog.Builder(this)
+                with(alert) {
+                    setTitle("Deleting Data")
+                    setMessage("Are you sure to delete ${data.nama}")
+                    setPositiveButton("Delete") { dialogInterface: DialogInterface, _ ->
+                        presenter.deleteVisitor(data.id)
+                        dialogInterface.dismiss()
+                        finish()
+                    }
+
+                    setNegativeButton("Cancel") { dialogInterface: DialogInterface, _ ->
+                        dialogInterface.dismiss()
+                    }
+
+
+                }.show()
+
+
             }
 
         }
@@ -71,7 +90,8 @@ class MyVisitors : AppCompatActivity(), VisitorView {
                     }
                 }
 
-            } else -> {
+            }
+            else -> {
                 doneButton.setOnClickListener {
 
                     val nama = et_name.text.toString()
@@ -100,7 +120,7 @@ class MyVisitors : AppCompatActivity(), VisitorView {
         }
 
 
-        cancelButton.setOnClickListener{
+        cancelButton.setOnClickListener {
             finish()
         }
 

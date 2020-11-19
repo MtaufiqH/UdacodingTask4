@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), VisitorView {
             adapter = VisitorAdapter(this@MainActivity, data) { item ->
                 val intent = Intent(this@MainActivity, MyVisitors::class.java)
                 intent.putExtra("DATA_VISITOR", item)
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
                 startActivity(intent)
             }
         }
