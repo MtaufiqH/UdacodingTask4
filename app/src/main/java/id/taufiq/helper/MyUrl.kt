@@ -15,7 +15,7 @@ object MyUrl {
 }
 
 
-
+// delaying activity function
 fun delayFunction(function: () -> Unit, delay: Long) {
     @Suppress("DEPRECATION")
     Handler().postDelayed(function, delay)

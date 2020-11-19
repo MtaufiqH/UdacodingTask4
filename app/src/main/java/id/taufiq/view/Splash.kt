@@ -1,10 +1,10 @@
-package id.taufiq
+package id.taufiq.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import id.taufiq.R
 import id.taufiq.helper.delayFunction
-import id.taufiq.view.MainActivity
 
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,5 +18,6 @@ class Splash : AppCompatActivity() {
     private fun moveIntent() {
         val mainIntent = Intent(this, MainActivity::class.java)
         startActivity(mainIntent)
+        finishAffinity()
     }
 }

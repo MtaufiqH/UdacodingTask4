@@ -15,9 +15,6 @@ interface ApiClient {
     @GET("getAll.php")
     suspend fun getAllVisitor(): Response<MyVisitor>
 
-    @GET("getAll.php")
-    suspend fun getVisitorById(@Query("id") userId: String): Response<MyVisitor>
-
     @FormUrlEncoded
     @POST("insert.php")
     suspend fun insertVisitor(
