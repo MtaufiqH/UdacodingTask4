@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottomSheet"
     android:layout_width="match_parent"
-    android:paddingBottom="24dp"
     android:layout_height="wrap_content"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:paddingBottom="24dp"
+    tools:context=".view.MyVisitors">
 
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/name"
         android:text="@string/nama"
-        app:layout_constraintBaseline_toBaselineOf="@+id/name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_name"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/et_name"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/bg_et"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:paddingStart="8dp"
+        android:hint="@string/insert_with_full_name"
         android:paddingEnd="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -53,123 +56,129 @@
         app:layout_constraintGuide_begin="200dp" />
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/et_nomor_hp"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_et"
+        android:hint="@string/inserting_exp_082"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/description"
         android:text="@string/nomor_hp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/description"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_nomor_hp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 
     <EditText
-        android:id="@+id/description2"
+        android:id="@+id/et_tgl_kunjungan"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_et"
         android:importantForAutofill="no"
-        android:inputType="textMultiLine"
+        android:inputType="date"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:hint="@string/yyyy_mm_dd"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nomor_hp" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/description"
         android:text="@string/tgl_kunjungan"
-        app:layout_constraintBaseline_toBaselineOf="@+id/description2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_tgl_kunjungan"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 
     <EditText
-        android:id="@+id/description3"
+        android:id="@+id/et_asal_sekolah"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_et"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:hint="@string/inserting_kampus_sekolah"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/description2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_tgl_kunjungan" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/description"
         android:text="@string/asal_sekolah"
-        app:layout_constraintBaseline_toBaselineOf="@+id/description3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_asal_sekolah"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 
     <EditText
-        android:id="@+id/description4"
+        android:id="@+id/et_alamat"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_et"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:hint="@string/inserting_your_adress"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/description3" />
+        app:layout_constraintTop_toBottomOf="@+id/et_asal_sekolah" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/description"
         android:text="@string/alamat"
-        app:layout_constraintBaseline_toBaselineOf="@+id/description4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_alamat"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 
     <EditText
-        android:id="@+id/description5"
+        android:id="@+id/et_tujuan"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_et"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:hint="@string/what_youre_reason"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/description4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_alamat" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:labelFor="@id/description"
         android:text="@string/tujuan"
-        app:layout_constraintBaseline_toBaselineOf="@+id/description5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_tujuan"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -185,7 +194,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/description5" />
+        app:layout_constraintTop_toBottomOf="@+id/et_tujuan" />
 
     <Button
         android:id="@+id/doneButton"
@@ -196,7 +205,20 @@
         app:layout_constraintEnd_toStartOf="@+id/cancelButton"
         app:layout_constraintHorizontal_bias="0.828"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/description5" />
+        app:layout_constraintTop_toBottomOf="@+id/et_tujuan" />
+
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/delete"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_tujuan" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"

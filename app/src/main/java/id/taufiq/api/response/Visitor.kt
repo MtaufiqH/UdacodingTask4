@@ -1,8 +1,11 @@
 package id.taufiq.api.response
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Visitor(
     @SerializedName("alamat")
     val alamat: String,
@@ -18,4 +21,4 @@ data class Visitor(
     val tanggalKunjungan: String,
     @SerializedName("tujuan")
     val tujuan: String
-)
+) : Parcelable
