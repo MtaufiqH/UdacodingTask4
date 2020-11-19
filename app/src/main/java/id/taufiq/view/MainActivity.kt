@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity(), VisitorView {
         rv_visitor.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            adapter = VisitorAdapter(this@MainActivity, data) {
+            adapter = VisitorAdapter(this@MainActivity, data) { item ->
                 val intent = Intent(this@MainActivity, MyVisitors::class.java)
-                intent.putExtra("DATA_VISITOR", it)
+                intent.putExtra("DATA_VISITOR", item)
                 startActivity(intent)
             }
         }

@@ -14,12 +14,13 @@ import kotlinx.android.synthetic.main.activity_my_visitors.*
 
 class MyVisitors : AppCompatActivity(), VisitorView {
 
-    private val data = intent.getParcelableExtra<Visitor>("DATA_VISITOR")
     private val presenter = VisitorPresenter(this)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_visitors)
+
+         val data = intent.getParcelableExtra<Visitor>("DATA_VISITOR")
 
         if (data != null) {
             et_name.setText(data.nama)
@@ -35,6 +36,7 @@ class MyVisitors : AppCompatActivity(), VisitorView {
 
             deleteButton.setOnClickListener {
                 presenter.deleteVisitor(data.id)
+                finish()
             }
 
         }
@@ -65,7 +67,7 @@ class MyVisitors : AppCompatActivity(), VisitorView {
                         et_tujuan.error = "cannot be empty!"
                     } else {
                         presenter.updateVisitor(data?.id!!, nama, noHp, tgl, alamat, asal, tujuan)
-                        finishAffinity()
+                        finish()
                     }
                 }
 
