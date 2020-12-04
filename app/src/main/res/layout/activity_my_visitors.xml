@@ -63,7 +63,7 @@
         android:background="@drawable/bg_et"
         android:hint="@string/inserting_exp_082"
         android:importantForAutofill="no"
-        android:inputType="textMultiLine"
+        android:inputType="number"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"

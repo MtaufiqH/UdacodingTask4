@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import id.taufiq.R
@@ -45,6 +46,7 @@ class MyVisitors : AppCompatActivity(), VisitorView {
                     setPositiveButton("Delete") { dialogInterface: DialogInterface, _ ->
                         presenter.deleteVisitor(data.id)
                         dialogInterface.dismiss()
+                        Toast.makeText(this@MyVisitors, "Data deleted", Toast.LENGTH_SHORT).show()
                         finish()
                     }
 
@@ -68,32 +70,35 @@ class MyVisitors : AppCompatActivity(), VisitorView {
             "Update" -> {
                 doneButton.setOnClickListener {
 
-                        val nama = et_name.text.toString()
-                        val noHp = et_nomor_hp.text.toString()
-                        val alamat = et_alamat.text.toString()
-                        val tgl = et_tgl_kunjungan.text.toString()
-                        val asal = et_asal_sekolah.text.toString()
-                        val tujuan = et_tujuan.text.toString()
+                    val nama = et_name.text.toString()
+                    val noHp = et_nomor_hp.text.toString()
+                    val alamat = et_alamat.text.toString()
+                    val tgl = et_tgl_kunjungan.text.toString()
+                    val asal = et_asal_sekolah.text.toString()
+                    val tujuan = et_tujuan.text.toString()
 
-                        if (nama.isEmpty() && noHp.isEmpty() && alamat.isEmpty() && tgl.isEmpty() && asal.isEmpty() && tujuan.isEmpty()) {
+                    if (nama.isEmpty() && noHp.isEmpty() && alamat.isEmpty() && tgl.isEmpty() && asal.isEmpty() && tujuan.isEmpty()) {
 
-                            et_name.error = "cannot be empty!"
-                            et_nomor_hp.error = "cannot be empty!"
-                            et_alamat.error = "cannot be empty!"
-                            et_tgl_kunjungan.error = "cannot be empty!"
-                            et_asal_sekolah.error = "cannot be empty!"
-                            et_tujuan.error = "cannot be empty!"
-                        } else {
-                            if (data != null) {
-                                presenter.updateVisitor(data.id,nama,
-                                    noHp,
-                                    tgl,
-                                    alamat,
-                                    asal,
-                                    tujuan
-                                )
-                            }
-                            finish()
+                        et_name.error = "cannot be empty!"
+                        et_nomor_hp.error = "cannot be empty!"
+                        et_alamat.error = "cannot be empty!"
+                        et_tgl_kunjungan.error = "cannot be empty!"
+                        et_asal_sekolah.error = "cannot be empty!"
+                        et_tujuan.error = "cannot be empty!"
+                    } else {
+                        if (data != null) {
+                            presenter.updateVisitor(
+                                data.id, nama,
+                                noHp,
+                                tgl,
+                                alamat,
+                                asal,
+                                tujuan
+                            )
+                            Toast.makeText(this, "Data successfully update", Toast.LENGTH_SHORT).show()
+                        }
+
+                        finish()
                     }
                 }
 
@@ -118,6 +123,7 @@ class MyVisitors : AppCompatActivity(), VisitorView {
                         et_tujuan.error = "cannot be empty!"
                     } else {
                         presenter.insertVisitor(nama, noHp, tgl, alamat, asal, tujuan)
+                        Toast.makeText(this, "Data successfully added", Toast.LENGTH_SHORT).show()
                         finish()
                     }
                 }

@@ -9,7 +9,7 @@ import android.os.Handler
 
 object MyUrl {
     // Todo: Dont forget to change localhost into your IP Address
-    const val BASE_URL = "http://192.168.1.74/librarian/"
+    const val BASE_URL = "http://10.32.76.85/librarian/"
 
 
 }
