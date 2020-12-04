@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2020 at 01:24 AM
+-- Generation Time: Dec 04, 2020 at 02:37 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -44,8 +44,8 @@ CREATE TABLE `visitor` (
 INSERT INTO `visitor` (`id`, `nama`, `no_hp`, `tanggal_kunjungan`, `alamat`, `asal_sekolah`, `tujuan`) VALUES
 (2, 'Aldiansyah Fahmi', '085248565678', '2020-11-15', 'Jl. Gunung Batu No 12', 'STMIK Akba Makassar', 'Membaca buku tentang Java Programming language'),
 (3, 'Muh Nur Ichsan', '085290869876', '2020-11-14', 'Bumi Sudiang Raya No 1', 'STMIK Dipanegara Makassar', 'Mencari Buku Algoritma dan Data Structure'),
-(6, 'M. Taufiq Hidayat', '082347616550', '2020-11-16', 'Jl. P. Kemerdekaan KM 17', 'STMIK Handayani Makassar', 'Mencari referensi mengenai ilmu teknologi dalam penerapannya di dunia kesehatan\n'),
-(24, 'Kamelia Taufiq', '082321345671', '2020-11-17', 'BPS Sudiang', 'UIN Alaudin Makassar', 'Belajar dan membiasakan diri dengan buku.');
+(25, 'Taufiq', '082347616550', '2020-12-01', 'sudiang Raya', 'SMK darussalam Makassar', 'belajar'),
+(26, 'Kamelia', '085241825450', '2020-12-02', 'Bumi permata Sudiang', 'UIN Alaudin', 'Jalan-jalan');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +65,7 @@ ALTER TABLE `visitor`
 -- AUTO_INCREMENT for table `visitor`
 --
 ALTER TABLE `visitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
